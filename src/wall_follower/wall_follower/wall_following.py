@@ -30,13 +30,13 @@ class WallPub(Node):
         self.laser_wall = msg.ranges[90]
         self.laser_front = msg.ranges[0]
     def pub(self):
-        if(self.laser_wall > 0.3 and self.laser_front > 0.5):
+        if(self.laser_wall > 0.5 and self.laser_front > 0.5):
             self.msg.linear.x = 0.05
             self.msg.angular.z = 0.03
-        elif(self.laser_wall < 0.2 and self.laser_front > 0.5):
+        elif(self.laser_wall < 0.4 and self.laser_front > 0.5):
             self.msg.linear.x = 0.03
             self.msg.angular.z = -0.04
-        elif(self.laser_wall >= 0.2 and self.laser_wall <= 0.3 and self.laser_front > 0.5):
+        elif(self.laser_wall >= 0.4 and self.laser_wall <= 0.5 and self.laser_front > 0.5):
             self.msg.linear.x = 0.05
             self.msg.angular.z = 0.0
         else:
