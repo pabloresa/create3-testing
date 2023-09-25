@@ -24,6 +24,7 @@ class WallPub(Node):
         timer_period = 0.5
         self.msg = Twist()
         self.laser_wall = 0
+        self.laser_front = 0
         self.timer = self.create_timer(timer_period, self.pub)
     def laser_capture(self, msg):
         self.laser_wall = msg.ranges[90]
